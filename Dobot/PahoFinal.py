@@ -5,7 +5,7 @@ import math
 import paho.mqtt.client as mqtt #import the client1
 import time
 
-############
+########################################
 
 
 def on_message(client, userdata, message):
@@ -55,6 +55,7 @@ try:
     client.on_message=on_message #attach function to callback
     print("connecting to broker")
     broker_address="192.168.51.115"
+    # To select emqx as broker
     #broker_address="broker.mqtt-dashboard.co"
     #broker_address="broker.emqx.io"
     client.connect(broker_address,1883) #connect to broker    

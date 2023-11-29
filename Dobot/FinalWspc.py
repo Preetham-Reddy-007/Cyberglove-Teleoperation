@@ -27,7 +27,7 @@ try:
     # Receive BUFFER_SIZE bytes data
     # data is a list with 2 elements
     # first is data
-    #second is client address
+    # second is client address
     data = s.recvfrom(BUFFER_SIZE)
     D = data[0].decode('utf-8')
     dx = ord(D[0])

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arduino and ESP32 Websocket</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta charset='UTF-8'>
+  <style>
+    body {
+      background-color: #E6D8D5;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>INDEX FINGER ANGLE: <span id='indang'>-</span></h1>
+  <h1>MIDDLE FINGER ANGLE: <span id='midang'>-</span></h1>
+  <h1>RING FINGER ANGLE: <span id='rngang'>-</span></h1>
+  <h1>LITLE FINGER ANGLE: <span id='lilang'>-</span></h1>
+  <h1>THUMB ANGLE: <span id='thbang'>-</span></h1>
+  <h1>ROLL: <span id='roll'>-</span></h1>
+  <h1>PITCH: <span id='pitch'>-</span></h1>
+  <h1>YAW: <span id=''>-</span></h1>
+  <h1>FORCE FEEDBACK: <span id='ff'>-</span></h1>
+  <button type='button' id='BTN_1'>
+    <h1>ON</h1>
+  </button><button type='button' id='BTN_2'>
+    <h1>OFF</h1>
+  </button>
+  <h1>TACTILE FEEDBACK: <span id='tf'>-</span></h1>
+  <button type='button' id='BTN_3'>
+    <h1>ON</h1>
+  </button><button type='button' id='BTN_3'>
+    <h1>OFF</h1>
+  </button>
+</body>
+<script>
+  var Socket;
+  document.getElementById('BTN_1').addEventListener('click', button_1_pressed);
+  document.getElementById('BTN_2').addEventListener('click', button_2_pressed);
+  document.getElementById('BTN_3').addEventListener('click', button_3_pressed);
+  document.getElementById('BTN_4').addEventListener('click', button_4_pressed);
+  function init() {
+    Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
+    Socket.onmessage = function(event) {
+      processCommand(event);
+    };
+  }
+  function processCommand(event) {
+    var obj = JSON.parse(event.data);
+    document.getElementById('message').innerHTML = obj.PIN_Status;
+    document.getElementById('temp').innerHTML = obj.Temp;
+    document.getElementById('hum').innerHTML = obj.Hum;
+    console.log(obj.PIN_Status);
+    console.log(obj.Temp);
+    console.log(obj.Hum);
+  }
+  function button_1_pressed() {
+    Socket.send('0');
+  }
+  function button_2_pressed() {
+    Socket.send('1');
+  }
+  function button_1_pressed() {
+    Socket.send('2');
+  }
+  function button_2_pressed() {
+    Socket.send('3');
+  }
+  window.onload = function(event) {
+    init();
+  }
+</script>
+</html>

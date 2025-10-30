@@ -3,7 +3,6 @@
 A real-time teleoperation system that uses a sensor-equipped cyber glove to remotely control a Dobot robotic arm. The system captures hand movements and finger positions through flex sensors and an IMU, transmitting the data wirelessly via MQTT to control a robotic gripper with precision.
 
 ![Cyberglove System Overview](images/system_overview.jpg)
-*Add an image showing the complete system setup with the cyber glove and Dobot robot*
 
 ## Table of Contents
 - [Overview](#overview)
@@ -31,7 +30,7 @@ The Cyberglove Teleoperation system enables intuitive remote control of robotic 
 5. **Feedback System**: Provides force feedback via servos and tactile feedback via vibration motors
 
 ![Cyber Glove Hardware](images/cyber_glove_hardware.jpg)
-*Add an image of the cyber glove hardware showing sensors and components*
+
 
 ## Features
 
@@ -52,8 +51,6 @@ The Cyberglove Teleoperation system enables intuitive remote control of robotic 
 - **Tactile Feedback**: Vibration motors simulate touch sensations
 - **Visual Feedback**: Web-based dashboard showing all sensor values
 
-![Web Interface Dashboard](images/web_interface.jpg)
-*Add a screenshot of the web interface showing real-time sensor data*
 
 ## System Architecture
 
@@ -79,8 +76,6 @@ The system uses a distributed architecture with the following components:
 └─────────────────┘                              └─────────────────┘
 ```
 
-![System Architecture Diagram](images/architecture_diagram.jpg)
-*Add a detailed system architecture diagram*
 
 ## Hardware Components
 
@@ -95,8 +90,6 @@ The system uses a distributed architecture with the following components:
 | Vibration Motors | DC Vibration Motors | 2 | Provide tactile feedback |
 | 3D Printed Parts | PLA/ABS | Multiple | Mechanical structure and sensor mounting |
 
-![Hardware Components](images/hardware_components.jpg)
-*Add an image showing all the hardware components laid out*
 
 ### Pin Configuration (ESP32)
 
@@ -156,13 +149,6 @@ The system uses a distributed architecture with the following components:
 - `Dobot/PahoFinal2.py`: Alternative MQTT implementation
 - `PahoConnect.py`: MQTT connection testing utility
 
-## Circuit Diagram
-
-![Circuit Diagram](images/circuit_diagram.jpg)
-*Add the complete circuit diagram showing ESP32 connections to all sensors and actuators*
-
-![Wiring Schematic](images/wiring_schematic.jpg)
-*Add detailed wiring schematic with pin numbers and component values*
 
 ### Sensor Calibration Values
 
@@ -191,8 +177,6 @@ const float delta_ang = 107.0;
 
 The cyber glove uses custom 3D printed parts for mechanical structure and sensor mounting. STL files are provided for both right-hand (default) and left-hand configurations.
 
-![3D Printed Parts](images/3d_printed_parts.jpg)
-*Add an image showing all the 3D printed components*
 
 ![Assembled Glove](images/assembled_glove.jpg)
 *Add an image of the fully assembled cyber glove*
@@ -230,8 +214,6 @@ All parts are available in mirrored versions in the `STL_Files_Left_Hand/` direc
 - **Supports**: Required for some parts
 - **Print Orientation**: Follow guidelines in `STL_Files_Left_Hand/Readme cyber glove prints.pdf`
 
-![Printing Guide](images/printing_guide.jpg)
-*Add an image showing recommended print orientations*
 
 ## Installation
 
@@ -254,7 +236,6 @@ All parts are available in mirrored versions in the `STL_Files_Left_Hand/` direc
    - Ensure robot is powered and initialized
 
 ![Assembly Steps](images/assembly_steps.jpg)
-*Add a step-by-step assembly guide image*
 
 ### Software Setup
 
@@ -348,7 +329,7 @@ The interface displays:
 - Tactile feedback status
 - Control buttons for feedback activation
 
-![Usage Example](images/usage_example.jpg)
+![Usage Example](images/usage_example.gif)
 *Add an image or GIF showing the system in operation*
 
 ### 4. Start Robot Controller
@@ -583,7 +564,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For questions or support, please open an issue in the GitHub repository.
-
----
-
-**Note**: Remember to update the image paths in this README once you add actual images to the `images/` directory in your repository.

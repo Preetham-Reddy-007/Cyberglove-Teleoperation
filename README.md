@@ -179,7 +179,6 @@ The cyber glove uses custom 3D printed parts for mechanical structure and sensor
 
 
 ![Assembled Glove](images/assembled_glove.jpg)
-*Add an image of the fully assembled cyber glove*
 
 ### Parts List
 
@@ -330,7 +329,6 @@ The interface displays:
 - Control buttons for feedback activation
 
 ![Usage Example](images/usage_example.gif)
-*Add an image or GIF showing the system in operation*
 
 ### 4. Start Robot Controller
 
